@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppState } from 'src/app/app.redurers';
 import { Store } from '@ngrx/store';
-import * as fromTodo from '../../../ngrx/actions/todo.actions';
+import * as fromTodo from '../../../ngrx/todo/todo.actions';
 
 @Component({
   selector: 'app-todo-add',

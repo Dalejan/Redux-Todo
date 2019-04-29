@@ -5,7 +5,7 @@ import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/app.redurers';
-import { ToggleTodoAction, EditTodoAction, DeleteTodoAction } from 'src/app/ngrx/actions/todo.actions';
+import { ToggleTodoAction, EditTodoAction, DeleteTodoAction } from 'src/app/ngrx/todo/todo.actions';
 
 @Component({
   selector: 'app-todo-item',

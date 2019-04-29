@@ -9,10 +9,12 @@ import { TodoFooterComponent } from './components/todo/todo-footer/todo-footer.c
 import { TodoAddComponent } from './components/todo/todo-add/todo-add.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { StoreModule } from '@ngrx/store';
-import { todoReducer } from './ngrx/reducer/todo.reducer';
+import { todoReducer } from './ngrx/todo/todo.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { environment } from 'src/environments/environment';
+import { appReducers } from './app.redurers';
+import { FilterPipe } from './pipes/filter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,12 +23,13 @@ import { environment } from 'src/environments/environment';
     TodoItemComponent,
     TodoFooterComponent,
     TodoAddComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({ todos: todoReducer }),
+    StoreModule.forRoot(appReducers),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production

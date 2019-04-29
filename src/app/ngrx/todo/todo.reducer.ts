@@ -1,4 +1,4 @@
-import * as fromTodo from '../actions/todo.actions';
+import * as fromTodo from './todo.actions';
 import { Todo } from 'src/app/models/todo.model';
 
 const initialState: Todo[] = [];
@@ -25,6 +25,13 @@ export function todoReducer(state = initialState, action: fromTodo.Actions): Tod
       });
     case fromTodo.DELETE_TODO:
       return state.filter(item => item.id !== action.id);
+    case fromTodo.TOGGLE_COMPLETE_ALL:
+      return state.map(item => {
+        return { ...item, completed: action.completed }
+      });
+    case fromTodo.DELETE_COMPLETED:
+      return state.filter(item => !item.completed);
+
     default:
       return state;
   }
